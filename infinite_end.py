@@ -6,8 +6,8 @@ from PIL import Image
 MAX_LINES_WIDTH = 5000
 MAX_NUMBER_OF_LINES = 5000
 
-# Lines are created in _opposite_ order.
-# Each line stops at the 1
+# Lines are created in _opposite_ order (i.e. bottom up).
+# Each line ends with '...10'.
 _lines = [
     [1 for i in range(MAX_LINES_WIDTH - 2)] + [0]  # inital row: 0...010
 ]
