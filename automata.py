@@ -1,3 +1,6 @@
+# A line is a vertical strip of the triangle.
+# In particular it does _not_ contain the 0s on both sides.
+# This allows for arbitrarily large images to be created.
 _lines = [
     [1]  # the first line
 ]
@@ -5,9 +8,11 @@ _lines = [
 
 """
 Calculates until the value is known.
+    `row`:
+        0 being initial row.
+    `column`:
+        0 being center column.
 """
-# row:      0 being initial row.
-# column:   0 being center column.
 def get(row, column):
     compute_until_row(row)
 
@@ -16,16 +21,27 @@ def get(row, column):
 
 """
 Throws exception if cell has not been calculated yet.
+    `row`:
+        0 being initial row.
+    `column`:
+        0 being center column.
 """
 def soft_get(row, column):
     return _lines[row][column + row]
 
 
+"""
+`row`:
+    0 being initial row.
+"""
 def has_row(row):
     return len(_lines) > row
 
 
-# row:  0 being initial row.
+"""
+`row`:
+    0 being initial row.
+"""
 def get_row(row):
     compute_until_row(row)
 
@@ -35,6 +51,8 @@ def get_row(row):
 """
 A diagonal is an inner diagonal.
 I.e. right diagonals always start with 1, not to sequence of 0's.
+    `index`:
+        0 being the right side of the triangle.
 """
 def get_right_diagonal(index):
     diagonal = []
@@ -53,6 +71,12 @@ def get_right_diagonal(index):
     return diagonal
 
 
+"""
+A diagonal is an inner diagonal.
+I.e. left diagonals always start with 1, not to sequence of 0's.
+    `index`:
+        0 being the left side of the triangle.
+"""
 def get_left_diagonal(index):
     diagonal = []
     # column_offset = int(index / 2)
@@ -74,6 +98,10 @@ def get_number_of_rows():
     return len(_lines)
 
 
+"""
+`row`:
+    0 being initial row.
+"""
 def compute_until_row(row):
     while len(_lines) <= row:
         compute_next_line()
@@ -100,6 +128,11 @@ def _safe_get_line_at(line, at):
     return 0
 
 
+"""
+The shape for the input is:
+    x y z
+      ?
+"""
 def apply_rule_to(x, y, z):
     pattern = [x, y, z]
 
