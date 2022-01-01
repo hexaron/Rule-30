@@ -1,4 +1,3 @@
-import infinite_end
+import linked_list
 
-
-infinite_end.run()
+diagonal = linked_list.List(True)
