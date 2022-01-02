@@ -3,8 +3,8 @@ import automata
 from PIL import Image
 
 
-MAX_LINES_WIDTH = 5000
-MAX_NUMBER_OF_LINES = 5000
+MAX_LINES_WIDTH = 100
+MAX_NUMBER_OF_LINES = 100
 
 # Lines are created in _opposite_ order (i.e. bottom up).
 # Each line ends with '...10'.
