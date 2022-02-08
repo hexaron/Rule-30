@@ -25,7 +25,7 @@ def run():
 
     for y in range(MAX_NUMBER_OF_LINES):
         for x in range(MAX_LINES_WIDTH):
-            values = 1
+            value = 1
 
             if len(_lines[y]) > x:
                 value = 1 - _lines[y][x]  # 1 is black and 0 is white
